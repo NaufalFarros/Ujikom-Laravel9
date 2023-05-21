@@ -9,7 +9,8 @@
             <div class="card-body">
                 <div class="d-flex justify-content-start">
                     <div class="col-8">
-                        <form action="#">
+                        <form action="{{route('artikel.store')}}" method="POST">
+                            @csrf 
                             <div class="form-group">
                                 <label>Judul Artikel</label>
                                 <input class="form-control" name="judul_artikel">

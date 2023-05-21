@@ -2,11 +2,13 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/home">
+        <div class="sidebar-brand-icon">
+            <img class="rounded" src="{{asset('images/LogoPolije.png')}}" style="width: 50px" alt="">
+            <img class="rounded" src="{{asset('images/LOGOLSPPOLIJE.png')}}" style="width: 50px" alt="">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        {{-- <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div> --}}
     </a>
 
     <!-- Divider -->
@@ -30,11 +32,11 @@
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="tables.html">
             <i class="fas fa-fw fa-table"></i>
             <span>Lain lain</span></a>
-    </li>
+    </li> --}}
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

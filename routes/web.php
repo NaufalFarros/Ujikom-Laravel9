@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtikelController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,24 +16,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
     // auth jika masih login
     if (Auth::check()) {
         return redirect()->route('home');
     }
+    return view('auth.login');
 });
 
-Route::get('/artikel', function () {
-    return view('pages.artikel.index');
-});
+Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel.index');
 
-Route::get('/artikel/tambah', function () {
-    return view('pages.artikel.create');
-})->name('artikel.create');
-
-Route::get('/artikel/edit', function () {
-    return view('pages.artikel.edit');
-})->name('artikel.edit');
-
+Route::get('/artikel/tambah', [ArtikelController::class, 'create'])->name('artikel.create');
+Route::post('/artikel/tambah', [ArtikelController::class, 'store'])->name('artikel.store');
+Route::get('/artikel/edit/{id}',[ArtikelController::class, 'edit'])->name('artikel.edit');
+Route::post('/artikel/edit/{id}',[ArtikelController::class, 'update'])->name('artikel.update');
+Route::delete('/artikel/delete/{id}',[ArtikelController::class, 'destroy'])->name('artikel.destroy');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
